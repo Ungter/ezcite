@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from './Header'; // Import the Header component
 import '../Templates/homepage.css';
 
 const Homepage = () => {
@@ -22,28 +23,29 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-      <h1>Ez Cite</h1>
+      <Header /> {/* Include the Header component */}
 
-      <h1>Welcome to Essay Citation Generator</h1>
-      <textarea
-        value={essay}
-        onChange={(e) => setEssay(e.target.value)}
-        placeholder="Enter your essay here..."
-        style={{ width: '30%', margin: '0 auto', minHeight: '100px', textAlign: 'center' }} // Adjusted style
-      />
-      <br /> 
-      <button onClick={handleSubmit}>Generate Citations</button>
+      <div className="content">
+        <textarea
+          value={essay}
+          onChange={(e) => setEssay(e.target.value)}
+          placeholder="Enter your essay here..."
+          style={{ width: '30%', margin: '0 auto', minHeight: '100px', textAlign: 'center' }} // Adjusted style
+        />
+        <br /> 
+        <button onClick={handleSubmit}>Generate Citations</button>
 
-      {citations.length > 0 && (
-        <div className="citations">
-          <h2>Citations:</h2>
-          <ul>
-            {citations.map((citation) => (
-              <li key={citation.id}>{citation.text}</li> // Wrap citation text in <li> tags
-            ))}
-          </ul>
-        </div>
-      )}
+        {citations.length > 0 && (
+          <div className="citations">
+            <h2>Citations:</h2>
+            <ul>
+              {citations.map((citation) => (
+                <li key={citation.id}>{citation.text}</li> // Wrap citation text in <li> tags
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

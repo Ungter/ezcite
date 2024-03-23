@@ -7,6 +7,10 @@ body, html {
   background-color: #5585a0; /* Light blue background color */
 }
 
+.content {
+  margin-top: 300px; /* Adjust as needed to create space below the header */
+}
+
 .homepage {
     text-align: center;
     margin-top: 0px;
