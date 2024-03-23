@@ -1,7 +1,9 @@
+/* header.css */
+
 .header {
     background-color: black; 
     color: white;
-    padding: 20px;
+    padding: 0px;
     text-align: center; /* Align text in the center */
     font-size: 24px; 
     position: fixed;
@@ -9,17 +11,26 @@
     top: 0;
     z-index: 999; 
   }
-
-.header img{
+  
+  .header img {
     display: block;
-    margin-right: auto;
-    margin-left: 0;
-}
-
-
-.introduction {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    width: 250px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position the image */
+    top: 10px; /* Adjust the top position */
+    left: 10px; /* Adjust the left position */
+  }
+  
+  .introduction {
     margin-top: 0; /* Remove margin at the top */
     padding-top: 20px; /* Add padding at the top */
     text-align: center; /* Align text in the center */
     font-size: 18px; /* Set font size */
-}
+    position: absolute; /* Position the introduction section */
+    top: 20px; /* Adjust the top position */
+    left: 50%; /* Align to the center */
+    transform: translateX(-50%); /* Center horizontally */
+  }
+  
