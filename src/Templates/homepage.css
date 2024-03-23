@@ -8,7 +8,7 @@ body, html {
 }
 
 .content {
-  margin-top: 300px; /* Adjust as needed to create space below the header */
+  margin-top: 350px; /* Adjust as needed to create space below the header */
 }
 
 .homepage {
@@ -30,7 +30,7 @@ body, html {
   }
   
   textarea {
-    width: 80%;
+    width: 90%;
     min-height: 200px;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -39,7 +39,7 @@ body, html {
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease;
-    text-align: left; /* Ensure text alignment is left */
+    text-align: center; /* Ensure text alignment is left */
     color: black; /* Set text color to black */
   }
   
