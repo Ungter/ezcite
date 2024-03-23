@@ -1,6 +1,7 @@
 // --------------- Imports --------------- 
 const axios = require('axios')
-
+const google = require('googlethis')
+const fs = require('fs')
 
 // --------------- User input varibles ---------------
 
@@ -15,7 +16,37 @@ let keyIdeasFromPrompt;
 let sourcesFromMemory;
 let sourcesFromWeb;
 
-// --------------- Functions ---------------
+// --------------- Non-AI Helper Functions ---------------
+
+function setBlacklistedWebsites() {
+
+}
+
+async function googleSearch(query) {
+    const options = {
+        page: 0,
+        safe: false,
+        parse_ads: false,
+        additional_params: {
+            hl: 'en',
+            num: 10
+        }
+    }
+
+    // Create an array to hold all the promises
+    const promises = query.map(item => google.search(item, options));
+
+    // Wait for all promises to resolve
+    const results = await Promise.all(promises);
+
+    // Write the results to a JSON file
+    fs.writeFile('results.json', JSON.stringify(results, null, 2), (err) => {
+        if (err) throw err;
+        console.log('Data written to file');
+    });
+}
+
+// --------------- AI Functions ---------------
 
 async function callAI(model, system, prompt ) {
 
@@ -80,4 +111,3 @@ async function JSONhelper() {
 JSONhelper().then((result) => {
     console.log(result)
 })
-
