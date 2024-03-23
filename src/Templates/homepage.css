@@ -19,11 +19,7 @@ body, html {
     margin-bottom: 0px;
     background-color: black; /* Light blue background color */
   }
-  
-  .logo {
-    width: 100px;
-    margin-bottom: 20px;
-  }
+
   
   .title {
     font-size: 24px;
@@ -178,19 +174,4 @@ textarea:not(:focus)::placeholder {
     margin-right: 5px; /* Adjust spacing between number and text */
   }
   
-  
-  
-  /* Add animation for logo spinning */
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .logo:hover {
-    animation: spin 1s linear infinite;
-  }
   

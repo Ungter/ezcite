@@ -1,12 +1,11 @@
 import React from 'react';
 // import ezCiteLogo from '../assets/svg/ezcite.svg'; // Import the SVG file
 import '../Templates/header.css';
-import ezCiteLogo from '../assets/svg/ezcite.svg';
 
 const Header = () => {
   return (
     <header className="header">
-        <img src= {ezCiteLogo} alt="Logo" className="logo"/>
+        <img src={require('../ezcite.png')} alt="Logo" />
         <div className="introduction">
             <h1>Welcome to EzCite!</h1>
             <p>The number 1 place to get citations for your paper.</p>
