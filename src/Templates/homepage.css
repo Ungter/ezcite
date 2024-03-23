@@ -39,8 +39,13 @@ body, html {
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease;
+    text-align: left; /* Ensure text alignment is left */
+    color: black; /* Set text color to black */
   }
   
+  textarea::placeholder {
+    color: rgb(107, 107, 107); /* Set placeholder color to black */
+  }
   
   textarea:focus {
     border-color: #007bff;

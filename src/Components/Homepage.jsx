@@ -29,7 +29,7 @@ const Homepage = () => {
         <textarea
           value={essay}
           onChange={(e) => setEssay(e.target.value)}
-          placeholder="Enter your essay here..."
+          placeholder="Enter paper here..."
           style={{ width: '30%', margin: '0 auto', minHeight: '100px', textAlign: 'center' }} // Adjusted style
         />
         <br /> 
