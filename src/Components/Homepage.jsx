@@ -5,6 +5,7 @@ import '../Templates/homepage.css';
 const Homepage = () => {
   const [essay, setEssay] = useState('');
   const [citations, setCitations] = useState([]);
+  const [blacklistedSites, setBlacklistedSites] = useState('');
 
   // Function to handle essay submission
   const handleSubmit = () => {
@@ -19,6 +20,23 @@ const Homepage = () => {
     }));
 
     setCitations(generatedCitations);
+
+    // Generate JSON file
+    //generateJSON(generatedCitations);
+  };
+
+  // Function to generate JSON file
+  const generateJSON = (data) => {
+    const jsonData = JSON.stringify(data);
+    const blob = new Blob([jsonData], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'citations.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -33,6 +51,15 @@ const Homepage = () => {
           style={{ width: '30%', margin: '0 auto', minHeight: '100px', textAlign: 'center' }} // Adjusted style
         />
         <br /> 
+
+        <textarea
+          value={blacklistedSites}
+          onChange={(e) => setBlacklistedSites(e.target.value)}
+          placeholder="Enter blacklisted sites"
+          className="blacklist-textarea"
+        />
+        <br /><br /><br /><br />
+
         <button onClick={handleSubmit}>Generate Citations</button>
 
         {citations.length > 0 && (
@@ -45,6 +72,10 @@ const Homepage = () => {
             </ol>
           </div>
         )}
+
+        {/* Blacklist textarea */}
+       <br /><br /><br /><br /><br /><br />
+        
       </div>
     </div>
   );
