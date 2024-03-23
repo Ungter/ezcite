@@ -38,11 +38,11 @@ const Homepage = () => {
         {citations.length > 0 && (
           <div className="citations">
             <h2>Citations:</h2>
-            <ul>
+            <ol> {/* Use <ol> instead of <ul> for ordered list */}
               {citations.map((citation) => (
                 <li key={citation.id}>{citation.text}</li> // Wrap citation text in <li> tags
               ))}
-            </ul>
+            </ol>
           </div>
         )}
       </div>

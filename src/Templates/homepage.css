@@ -60,25 +60,38 @@ body, html {
   }
   
   .citations {
-    margin-top: 40px;
+    margin-top: 20px;
   }
   
   .citations h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #333;
+    color: black; /* Darken the color of the heading */
   }
   
   .citations ul {
-    list-style-type: none;
+    list-style-type: none; /* Remove bullet points */
     padding: 0;
   }
   
   .citations li {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #555;
+    margin-bottom: 5px; /* Add some space between citations */
+    color: black; /* Set text color to black */
   }
+
+  .citations ol {
+    padding-left: 0; /* Remove default padding */
+  }
+  
+  .citations ol li {
+    margin-bottom: 5px; /* Add some space between citations */
+    list-style-type: decimal; /* Use decimal numbers for list items */
+  }
+  
+  .citations ol li::before {
+    content: counter(list-item) ". "; /* Add a period after the number */
+    margin-right: 5px; /* Adjust spacing between number and text */
+  }
+  
+  
   
   /* Add animation for logo spinning */
   @keyframes spin {
