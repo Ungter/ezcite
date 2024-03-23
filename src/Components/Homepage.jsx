@@ -8,36 +8,34 @@ const Homepage = () => {
   const [blacklistedSites, setBlacklistedSites] = useState('');
 
   // Function to handle essay submission
-  const handleSubmit = () => {
-    // Here you would implement the logic to process the essay and generate citations
-    // Replace the following lines with your actual citation generation logic
+const handleSubmit = () => {
+  // Here you would implement the logic to process the essay and generate citations
+  // Replace the following lines with your actual citation generation logic
 
-    // For now, let's just split the essay into sentences and treat each sentence as a citation
-    const essaySentences = essay.split('.').filter(sentence => sentence.trim() !== '');
-    const generatedCitations = essaySentences.map((sentence, index) => ({
-      id: index + 1,
-      text: sentence.trim() + '.',
-    }));
+  // For now, let's just split the essay into sentences and treat each sentence as a citation
+  const essaySentences = essay.split('.').filter(sentence => sentence.trim() !== '');
+  const generatedCitations = essaySentences.map((sentence, index) => ({
+    id: index + 1,
+    text: sentence.trim() + '.',
+  }));
 
-    setCitations(generatedCitations);
-
-    // Generate JSON file
-    //generateJSON(generatedCitations);
+  const essayJsonData = {
+    essay,
   };
+  const essayJsonString = JSON.stringify(essayJsonData, null, 2);
+  console.log('Essay JSON:', essayJsonString);
 
-  // Function to generate JSON file
-  const generateJSON = (data) => {
-    const jsonData = JSON.stringify(data);
-    const blob = new Blob([jsonData], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'citations.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+  // Generate JSON string for blacklisted sites
+  const blacklistJsonData = {
+    blacklistedSites: blacklistedSites.split('\n').filter(site => site.trim() !== ''),
   };
+  const blacklistJsonString = JSON.stringify(blacklistJsonData, null, 2);
+  console.log('Blacklist JSON:', blacklistJsonString);
+
+  setCitations(generatedCitations);
+};
+
+
 
   return (
     <div className="homepage">
@@ -51,16 +49,16 @@ const Homepage = () => {
           style={{ width: '30%', margin: '0 auto', minHeight: '100px', textAlign: 'center' }} // Adjusted style
         />
         <br /> 
-
+        <button onClick={handleSubmit}>Generate Citations</button>
+        
+        <br />
         <textarea
           value={blacklistedSites}
           onChange={(e) => setBlacklistedSites(e.target.value)}
           placeholder="Enter blacklisted sites"
           className="blacklist-textarea"
         />
-        <br /><br /><br /><br />
-
-        <button onClick={handleSubmit}>Generate Citations</button>
+        <br />
 
         {citations.length > 0 && (
           <div className="citations">
@@ -72,10 +70,6 @@ const Homepage = () => {
             </ol>
           </div>
         )}
-
-        {/* Blacklist textarea */}
-       <br /><br /><br /><br /><br /><br />
-        
       </div>
     </div>
   );
