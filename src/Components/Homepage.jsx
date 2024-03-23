@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Templates/homepage.css';
 
 const Homepage = () => {
   const [essay, setEssay] = useState('');
@@ -21,6 +22,8 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
+        <img src={require('../logo.png')} alt="Logo" style={{ width: '150px', height: '100px' }}/>
+
       <h1>Welcome to Essay Citation Generator</h1>
       <textarea
         value={essay}
