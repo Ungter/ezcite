@@ -8,7 +8,7 @@ const Header = () => {
         <img src={require('../ezcite.png')} alt="Logo" />
         <div className="introduction">
             <h1>Welcome to EzCite!</h1>
-            <p>The number 1 place to get citations for your paper.</p>
+            <p>The premier place to get citations for your paper.</p>
         </div>
     </header>
   );
