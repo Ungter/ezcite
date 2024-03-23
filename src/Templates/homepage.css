@@ -57,11 +57,21 @@ textarea::placeholder {
 }
 
 /* Add animation when input is focused */
+/* Fade out and zoom out the placeholder when input is focused */
 textarea:focus::placeholder {
-  opacity: 1; /* Increase opacity */
-  transform: translateY(-100%) scale(0.8); /* Move up and scale down */
+  opacity: 0; /* Fade out */
+  transform: translateY(-100%) scale(0.8); /* Zoom out */
   font-size: 12px; /* Decrease font size */
+  transition: opacity 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Add transition effect */
 }
+
+/* Fade in and zoom in the placeholder when input is not focused */
+textarea:not(:focus)::placeholder {
+  opacity: 0.5; /* Fade in */
+  transform: translateY(-75%) scale(1); /* Zoom in */
+  font-size: 16px; /* Restore font size */
+}
+
 
 /* Customize the input container */
 .custom-input {
@@ -128,6 +138,8 @@ textarea:focus::placeholder {
     background-color: #b0b0b0; /* Darker grey on hover */
   }
   
+
+  /* Citations */
   .citations {
     margin-top: 20px;
   }
