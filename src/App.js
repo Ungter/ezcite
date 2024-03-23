@@ -5,7 +5,7 @@ import Homepage from './Components/Homepage.jsx'; // Import the Homepage compone
 function App() {
   return (
     <div className="App">
-      <Homepage /> {/* Render the Homepage component */}
+      <Homepage />
     </div>
   );
 }

@@ -22,24 +22,24 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-        <img src={require('../logo.png')} alt="Logo" style={{ width: '150px', height: '100px' }}/>
+      <h1>Ez Cite</h1>
 
       <h1>Welcome to Essay Citation Generator</h1>
       <textarea
         value={essay}
         onChange={(e) => setEssay(e.target.value)}
         placeholder="Enter your essay here..."
-        rows={10}
-        cols={50}
+        style={{ width: '30%', margin: '0 auto', minHeight: '100px', textAlign: 'center' }} // Adjusted style
       />
+      <br /> 
       <button onClick={handleSubmit}>Generate Citations</button>
 
       {citations.length > 0 && (
         <div className="citations">
-          <h2>Possible Citations:</h2>
+          <h2>Citations:</h2>
           <ul>
             {citations.map((citation) => (
-              <li key={citation.id}>{citation.text}</li>
+              <li key={citation.id}>{citation.text}</li> // Wrap citation text in <li> tags
             ))}
           </ul>
         </div>
