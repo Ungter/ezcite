@@ -29,8 +29,8 @@ const Homepage = () => {
         <textarea
           value={essay}
           onChange={(e) => setEssay(e.target.value)}
-          placeholder="Enter paper here..."
-          style={{ width: '100%', margin: '0 auto', minHeight: '400px', textAlign: 'center' }} // Adjusted style
+          placeholder="Enter paper"
+          style={{ width: '30%', margin: '0 auto', minHeight: '100px', textAlign: 'center' }} // Adjusted style
         />
         <br /> 
         <button onClick={handleSubmit}>Generate Citations</button>

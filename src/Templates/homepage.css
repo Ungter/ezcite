@@ -8,7 +8,9 @@ body, html {
 }
 
 .content {
-  margin-top: 350px; /* Adjust as needed to create space below the header */
+  margin-top: 250px;
+  margin-right: 0px; 
+  /* alignment of the content text */
 }
 
 .homepage {
@@ -17,11 +19,7 @@ body, html {
     margin-bottom: 0px;
     background-color: black; /* Light blue background color */
   }
-  
-  .logo {
-    width: 100px;
-    margin-bottom: 20px;
-  }
+
   
   .title {
     font-size: 24px;
@@ -29,30 +27,104 @@ body, html {
     color: #333;
   }
   
-  textarea {
-    width: 90%;
-    min-height: 200px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-    text-align: center; /* Ensure text alignment is left */
-    color: black; /* Set text color to black */
-  }
-  
-  textarea::placeholder {
-    color: rgb(107, 107, 107); /* Set placeholder color to black */
-  }
+  /* Existing CSS for textarea */
+/* Updated CSS for textarea */
+textarea {
+  width: 90%; /* Set width to match the text above it */
+  min-height: 200px;
+  margin: 0 auto; /* Center the textarea */
+  margin-bottom: 20px;
+  padding: 10px; /* Adjustpadding as needed */
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.1s ease;
+  text-align: center;
+  color: white;
+  position: relative;
+  background: transparent;
+}
+
+
+textarea::placeholder {
+  color: rgb(153, 153, 153); /* Set placeholder color to black */
+  position: absolute; /* Position placeholder absolutely */
+  top: 50%; /* Position placeholder in the middle */
+  transform: translateY(-50%); /* Center vertically */
+  left: 20px; /* Adjust left position as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  opacity: 0.5; /* Set initial opacity */
+  transition: opacity 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Add transition effect */
+
+}
+
+/* Add animation when input is focused */
+/* Fade out and zoom out the placeholder when input is focused */
+textarea:focus::placeholder {
+  opacity: 0; /* Fade out */
+  transform: translateY(-100%) scale(0.8); /* Zoom out */
+  font-size: 12px; /* Decrease font size */
+  transition: opacity 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Add transition effect */
+}
+
+/* Fade in and zoom in the placeholder when input is not focused */
+textarea:not(:focus)::placeholder {
+  opacity: 0.5; /* Fade in */
+  transform: translateY(-75%) scale(1); /* Zoom in */
+  font-size: 16px; /* Restore font size */
+}
+
+
+/* Customize the input container */
+.custom-input {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Style the textarea */
+.custom-input textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  color: whitesmoke; /* Set text color to black */
+}
+
+/* Style the placeholder */
+.custom-input textarea::placeholder {
+  color: rgb(107, 107, 107); /* Set placeholder color to black */
+}
+
+/* Style the button */
+.custom-input button {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  background-color: #4CAF50; /* Green button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-input button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
   
   textarea:focus {
     border-color: #007bff;
   }
   
   button {
-    background-color: rgba(90, 127, 187, 0.392); /* Light grey button color */
+    background-color: rgba(130, 156, 200, 0.392); /* Light grey button color */
     color: white;
     margin: 10 auto;
     border: none;
@@ -61,12 +133,15 @@ body, html {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
   }
   
   button:hover {
-    background-color: #b0b0b0; /* Darker grey on hover */
+    background-color: #00a31e; /* Darker grey on hover */
   }
   
+
+  /* Citations */
   .citations {
     margin-top: 20px;
   }
@@ -99,19 +174,4 @@ body, html {
     margin-right: 5px; /* Adjust spacing between number and text */
   }
   
-  
-  
-  /* Add animation for logo spinning */
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .logo:hover {
-    animation: spin 1s linear infinite;
-  }
   
