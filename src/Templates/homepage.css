@@ -1,9 +1,17 @@
 /* homepage.css */
 
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #5585a0; /* Light blue background color */
+}
+
 .homepage {
     text-align: center;
-    margin-top: 50px;
-    background-color: #9ad1f0; /* Light blue background color */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #5585a0; /* Light blue background color */
   }
   
   .logo {
@@ -33,7 +41,7 @@
   }
   
   button {
-    background-color: #918c8c; /* Light grey button color */
+    background-color: #0e0d0d; /* Light grey button color */
     color: white;
     border: none;
     padding: 10px 20px;
