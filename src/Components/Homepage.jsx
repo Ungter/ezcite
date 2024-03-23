@@ -48,9 +48,7 @@ const handleSubmit = () => {
           placeholder="Enter paper"
           style={{ width: '30%', margin: '0 auto', minHeight: '100px', textAlign: 'center' }} // Adjusted style
         />
-        <br /> 
-        <button onClick={handleSubmit}>Generate Citations</button>
-        
+        <br />         
         <br />
         <textarea
           value={blacklistedSites}
@@ -59,6 +57,10 @@ const handleSubmit = () => {
           className="blacklist-textarea"
         />
         <br />
+
+        <button onClick={handleSubmit}>Generate Citations</button>
+
+        <br /><br />
 
         {citations.length > 0 && (
           <div className="citations">

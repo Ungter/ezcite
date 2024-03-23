@@ -10,6 +10,7 @@ body, html {
 .content {
   margin-top: 250px;
   margin-right: 0px; 
+
   /* alignment of the content text */
 }
 
@@ -27,30 +28,27 @@ body, html {
     color: #333;
   }
   
-  /* Existing CSS for textarea */
-/* Updated CSS for textarea */
 textarea {
-  width: 90%; /* Set width to match the text above it */
-  min-height: 200px;
+    width: 90%; /* Set width to 90% of the container */
+  min-height: 300px; /* Set minimum height to 300px */
   margin: 0 auto; /* Center the textarea */
-  margin-bottom: 20px;
-  padding: 10px; /* Adjustpadding as needed */
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: border-color 0.1s ease;
-  text-align: center;
-  color: white;
-  position: relative;
-  background: transparent;
+  margin-bottom: 20px; /* Add bottom margin */
+  padding: 10px; /* Adjust padding as needed */
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+  font-size: 16px; /* Set font size */
+  transition: border-color 0.1s ease; /* Add transition effect */
+  color: white; /* Set text color to white */
+  background: transparent; /* Set background to transparent */
 }
-
+  
 .blacklist-textarea {
-  width: 25%; /* Set the width of the textarea */
-  min-height: 40px; /* Set the minimum height */
+  width: 90%; /* Set width to 90% of the container */
+  min-height: 50px; /* Set minimum height to 200px */
   margin: 0 auto; /* Center horizontally */
-  margin-top: 20px; /* Add margin from the top */
+  margin-top: 20px; /* Add top margin */
 }
+  
 
 
 
