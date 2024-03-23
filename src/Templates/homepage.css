@@ -4,14 +4,18 @@
 body, html {
   margin: 0;
   padding: 0;
-  background-color: #5585a0; /* Light blue background color */
+  background-color: black; /* Light blue background color */
+}
+
+.content {
+  margin-top: 300px; /* Adjust as needed to create space below the header */
 }
 
 .homepage {
     text-align: center;
     margin-top: 0px;
     margin-bottom: 0px;
-    background-color: #5585a0; /* Light blue background color */
+    background-color: black; /* Light blue background color */
   }
   
   .logo {
@@ -28,12 +32,19 @@ body, html {
   textarea {
     width: 80%;
     min-height: 200px;
+    margin: 0 auto;
     margin-bottom: 20px;
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease;
+    text-align: left; /* Ensure text alignment is left */
+    color: black; /* Set text color to black */
+  }
+  
+  textarea::placeholder {
+    color: rgb(107, 107, 107); /* Set placeholder color to black */
   }
   
   textarea:focus {
@@ -41,8 +52,9 @@ body, html {
   }
   
   button {
-    background-color: #0e0d0d; /* Light grey button color */
+    background-color: rgba(90, 127, 187, 0.392); /* Light grey button color */
     color: white;
+    margin: 10 auto;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -56,25 +68,38 @@ body, html {
   }
   
   .citations {
-    margin-top: 40px;
+    margin-top: 20px;
   }
   
   .citations h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #333;
+    color: white; /* Darken the color of the heading */
   }
   
   .citations ul {
-    list-style-type: none;
+    list-style-type: none; /* Remove bullet points */
     padding: 0;
   }
   
   .citations li {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #555;
+    margin-bottom: 5px; /* Add some space between citations */
+    color: white; /* Set text color to black */
   }
+
+  .citations ol {
+    padding-left: 0; /* Remove default padding */
+  }
+  
+  .citations ol li {
+    margin-bottom: 5px; /* Add some space between citations */
+    list-style-type: decimal; /* Use decimal numbers for list items */
+  }
+  
+  .citations ol li::before {
+    content: counter(list-item) ". "; /* Add a period after the number */
+    margin-right: 5px; /* Adjust spacing between number and text */
+  }
+  
+  
   
   /* Add animation for logo spinning */
   @keyframes spin {
