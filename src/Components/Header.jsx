@@ -4,8 +4,7 @@ import '../Templates/header.css';
 const Header = () => {
   return (
     <header className="header">
-      <h1>Ez Cite</h1>
-      <div className="subheader">Welcome to Essay Citation Generator</div>
+      <img src={require('../ezcite.png')} alt="Logo" style={{width:'200px', height:'60px'}} />
     </header>
   );
 };
