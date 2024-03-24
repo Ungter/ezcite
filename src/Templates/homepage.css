@@ -213,8 +213,13 @@ button:hover {
   display: none;
 }
 
+/* Style the dropdown selection highlight */
+.select-container select::-ms-value {
+  background-color: transparent; /* Set the background of the selection highlight to transparent */
+}
 
 /* Style placeholder for select */
+
 .select-container::before {
   content: attr(placeholder);
   display: block;
