@@ -1,6 +1,5 @@
 /* homepage.css */
 
-
 body, html {
   margin: 0;
   padding: 0;
@@ -8,62 +7,57 @@ body, html {
 }
 
 .content {
-  margin-top: 250px;
+  margin-top: 200px; /* Increase the margin-top value for more space */
   margin-right: 0px; 
   /* alignment of the content text */
 }
 
 .homepage {
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    background-color: black; /* Light blue background color */
-  }
-
-  
-  .title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Existing CSS for textarea */
-/* Updated CSS for textarea */
-textarea {
-  width: 90%; /* Set width to match the text above it */
-  min-height: 200px;
-  margin: 0 auto; /* Center the textarea */
-  margin-bottom: 20px;
-  padding: 10px; /* Adjustpadding as needed */
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: border-color 0.1s ease;
   text-align: center;
-  color: white;
-  position: relative;
-  background: transparent;
+  margin-top: 200px; /* Adjust the margin-top to create space below the fixed header */
+  background-color: black; /* Light blue background color */
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  min-height: 300px; /* Set minimum height to 300px */
+  text-align: left;
+  margin: 0 auto; /* Center the textarea */
+  margin-bottom: 20px; /* Add bottom margin */
+  padding: 10px; /* Adjust padding as needed */
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+  font-size: 16px; /* Set font size */
+  transition: border-color 0.1s ease; /* Add transition effect */
+  color: white; /* Set text color to white */
+  background: transparent; /* Set background to transparent */
 }
 
 .blacklist-textarea {
-  width: 25%; /* Set the width of the textarea */
-  min-height: 40px; /* Set the minimum height */
-  margin: 0 auto; /* Center horizontally */
-  margin-top: 20px; /* Add margin from the top */
+  width: 80%; /* Set width to 80% of the container */
+  min-height: 50px; /* Set minimum height to 200px */
+  margin-top: 25px; /* Add top margin */
 }
 
-
+.blacklist-textarea::placeholder {
+  top: 40%;
+}
 
 textarea::placeholder {
   color: rgb(255, 255, 255); /* Set placeholder color to black */
   position: absolute; /* Position placeholder absolutely */
-  top: 50%; /* Position placeholder in the middle */
+  top: 8%; /* Position placeholder in the middle */
   transform: translateY(-50%); /* Center vertically */
   left: 20px; /* Adjust left position as needed */
   font-size: 16px; /* Adjust font size as needed */
   opacity: 0.5; /* Set initial opacity */
   transition: opacity 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Add transition effect */
-
 }
 
 /* Add animation when input is focused */
@@ -82,6 +76,103 @@ textarea:not(:focus)::placeholder {
   font-size: 16px; /* Restore font size */
 }
 
+/* Citations */
+
+.citations h2 {
+  color: white; /* Darken the color of the heading */
+}
+
+.citations ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+}
+
+.citations li {
+  margin-bottom: 5px; /* Add some space between citations */
+  color: white; /* Set text color to black */
+}
+
+.citations ol {
+  padding-left: 0; /* Remove default padding */
+}
+
+.citations ol li {
+  margin-bottom: 5px; /* Add some space between citations */
+  list-style-type: decimal; /* Use decimal numbers for list items */
+}
+
+.citations ol li::before {
+  content: counter(list-item) ". "; /* Add a period after the number */
+  margin-right: 5px; /* Adjust spacing between number and text */
+}
+
+
+
+/* Selector list */
+
+button:hover {
+  background-color: #00a31e; /* Darker grey on hover */
+}
+
+button {
+  background-color: lightslategray; /* Light grey button color */
+  color: white;
+  margin: auto;
+  border: none;
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Add styles for citation dropdown */
+.select-container {
+  width: 50%;
+  margin: auto;
+  right: 200px;
+  position: relative;
+}
+
+/* Selector list */
+.select-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* Add styles for citation dropdown */
+.select-container {
+  width: 50%;
+  margin-right: -400px; /* Add margin between the dropdown and button */
+  position: relative;
+}
+
+.select-container select {
+  width: 25%;
+  right: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+/* Style the button */
+.generate-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: lightslategray; /* Light grey button color */
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
 
 /* Customize the input container */
 .custom-input {
@@ -100,11 +191,12 @@ textarea:not(:focus)::placeholder {
   font-size: 16px;
   transition: border-color 0.3s ease;
   color: whitesmoke; /* Set text color to black */
+  text-align: left;
 }
 
 /* Style the placeholder */
 .custom-input textarea::placeholder {
-  color: rgb(255, 255, 255); /* Set placeholder color to black */
+  color: rgb(255, 255, 255);
   text-emphasis-color: white;
 }
 
@@ -127,60 +219,68 @@ textarea:not(:focus)::placeholder {
   background-color: #45a049; /* Darker green on hover */
 }
 
-  
-  textarea:focus {
-    border-color: #007bff;
-  }
-  
-  button {
-    background-color: rgba(130, 156, 200, 0.392); /* Light grey button color */
-    color: white;
-    margin: 10 auto;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-  }
-  
-  button:hover {
-    background-color: #00a31e; /* Darker grey on hover */
-  }
-  
+textarea:focus {
+  border-color: #007bff;
+}
 
-  /* Citations */
-  .citations {
-    margin-top: 20px;
-  }
-  
-  .citations h2 {
-    color: white; /* Darken the color of the heading */
-  }
-  
-  .citations ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
-  }
-  
-  .citations li {
-    margin-bottom: 5px; /* Add some space between citations */
-    color: white; /* Set text color to black */
-  }
+button {
+  background-color: rgba(130, 156, 200, 0.392); /* Light grey button color */
+  color: white;
+  margin: 10 auto;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
 
-  .citations ol {
-    padding-left: 0; /* Remove default padding */
-  }
-  
-  .citations ol li {
-    margin-bottom: 5px; /* Add some space between citations */
-    list-style-type: decimal; /* Use decimal numbers for list items */
-  }
-  
-  .citations ol li::before {
-    content: counter(list-item) ". "; /* Add a period after the number */
-    margin-right: 5px; /* Adjust spacing between number and text */
-  }
-  
-  
+button:hover {
+  background-color: #00a31e; /* Darker grey on hover */
+}
+
+/* Citations */
+.citations {
+  margin-top: 20px;
+}
+
+.select-container select:focus {
+  outline: none;
+  border-color: #fffa6a;
+}
+
+.select-container select::-ms-expand {
+  display: none;
+}
+
+/* Style the dropdown selection highlight */
+.select-container select::-ms-value {
+  background-color: black; /* Set the background of the selection highlight to transparent */
+}
+
+/* Style placeholder for select */
+
+.select-container::before {
+  content: attr(placeholder);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+
+.select-container select:-moz-focusring {
+  color: black;
+  text-shadow: 0 0 0 #000;
+}
+
+/* Change color of placeholder when select is focused */
+.select-container select:focus + ::before {
+  color: #007bff;
+}
+
+/* Change color of arrow when select is focused */
+.select-container select:focus + ::after {
+  color: #007bff;
+}
