@@ -25,7 +25,7 @@ body, html {
 }
 
 textarea {
-  width: 90%; /* Set width to 90% of the container */
+  width: 100%;
   min-height: 300px; /* Set minimum height to 300px */
   text-align: left;
   margin: 0 auto; /* Center the textarea */
@@ -40,10 +40,9 @@ textarea {
 }
 
 .blacklist-textarea {
-  width: 80%; /* Set width to 90% of the container */
+  width: 80%; /* Set width to 80% of the container */
   min-height: 50px; /* Set minimum height to 200px */
-  margin: 0 auto; /* Center horizontally */
-  margin-top: 50px; /* Add top margin */
+  margin-top: 25px; /* Add top margin */
 }
 
 .blacklist-textarea::placeholder {
@@ -77,76 +76,7 @@ textarea:not(:focus)::placeholder {
   font-size: 16px; /* Restore font size */
 }
 
-/* Customize the input container */
-.custom-input {
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-/* Style the textarea */
-.custom-input textarea {
-  width: 100%;
-  min-height: 200px;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
-  color: whitesmoke; /* Set text color to black */
-  text-align: left;
-}
-
-/* Style the placeholder */
-.custom-input textarea::placeholder {
-  color: rgb(255, 255, 255);
-  text-emphasis-color: white;
-}
-
-/* Style the button */
-.custom-input button {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
-  background-color: #4CAF50; /* Green button color */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.custom-input button:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
-
-textarea:focus {
-  border-color: #007bff;
-}
-
-button {
-  background-color: rgba(130, 156, 200, 0.392); /* Light grey button color */
-  color: white;
-  margin: 10 auto;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #00a31e; /* Darker grey on hover */
-}
-
 /* Citations */
-.citations {
-  margin-top: 20px;
-}
 
 .citations h2 {
   color: white; /* Darken the color of the heading */
@@ -178,20 +108,51 @@ button:hover {
 
 
 
-/* Selector lIst */
+/* Selector list */
 
-/* homepage.css */
+button:hover {
+  background-color: #00a31e; /* Darker grey on hover */
+}
+
+button {
+  background-color: lightslategray; /* Light grey button color */
+  color: white;
+  margin: auto;
+  border: none;
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
 /* Add styles for citation dropdown */
 .select-container {
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  width: 50%;
+  margin: auto;
+  right: 200px;
+  position: relative;
+}
+
+/* Selector list */
+.select-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* Add styles for citation dropdown */
+.select-container {
+  width: 50%;
+  margin-right: -400px; /* Add margin between the dropdown and button */
   position: relative;
 }
 
 .select-container select {
   width: 25%;
+  right: 100px;
   padding: 10px;
   border-radius: 5px;
   font-size: 16px;
@@ -201,42 +162,14 @@ button:hover {
   transition: border-color 0.3s ease;
 }
 
-.select-container select:focus {
-  outline: none;
-  border-color: #fffa6a;
-}
-
-.select-container select::-ms-expand {
-  display: none;
-}
-
-/* Style the dropdown selection highlight */
-.select-container select::-ms-value {
-  background-color: black; /* Set the background of the selection highlight to transparent */
-}
-
-/* Style placeholder for select */
-
-.select-container::before {
-  content: attr(placeholder);
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-}
-
-.select-container select:-moz-focusring {
-  color: black;
-  text-shadow: 0 0 0 #000;
-}
-
-/* Change color of placeholder when select is focused */
-.select-container select:focus + ::before {
-  color: #007bff;
-}
-
-/* Change color of arrow when select is focused */
-.select-container select:focus + ::after {
-  color: #007bff;
+/* Style the button */
+.generate-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: lightslategray; /* Light grey button color */
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
 }
