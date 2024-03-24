@@ -13,7 +13,6 @@ const Homepage = () => {
   const citationValue = 'MLA';
 
   // Function to handle essay submission
-  // Function to handle essay submission
 const handleSubmit = () => {
   if (!essay.trim()) {
     setErrorMessage('Please enter your paper in the text field.');
