@@ -99,7 +99,7 @@ textarea:not(:focus)::placeholder {
 
 /* Style the placeholder */
 .custom-input textarea::placeholder {
-  color: rgb(255, 255, 255); /* Set placeholder color to black */
+  color: rgb(255, 255, 255);
   text-emphasis-color: white;
 }
 
@@ -199,9 +199,6 @@ button:hover {
   background-color: black;
   border: 2px solid #ccc;
   transition: border-color 0.3s ease;
-  appearance: none; /* Remove default appearance */
-  -moz-appearance: none; /* Remove default appearance for Firefox */
-  -webkit-appearance: none; /* Remove default appearance for Webkit */
 }
 
 .select-container select:focus {

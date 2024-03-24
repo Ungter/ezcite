@@ -65,8 +65,7 @@ const handleSubmit = () => {
           placeholder="Enter your paper here..."
           style={{ width: '80%', margin: '0 auto', minHeight: '400px', textAlign: 'left' }} // Adjusted style
         />
-        <br />         
-        <br />
+
         <textarea
           value={blacklistedSites}
           onChange={(e) => setBlacklistedSites(e.target.value)}
@@ -75,7 +74,7 @@ const handleSubmit = () => {
         />
 
         <br />
-
+        <br />
         <br />
 
         {/* Dropdown list for citation format selection */}
