@@ -1,6 +1,5 @@
 /* homepage.css */
 
-
 body, html {
   margin: 0;
   padding: 0;
@@ -8,29 +7,27 @@ body, html {
 }
 
 .content {
-  margin-top: 250px;
+  margin-top: 300px; /* Increase the margin-top value for more space */
   margin-right: 0px; 
-
   /* alignment of the content text */
 }
 
 .homepage {
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    background-color: black; /* Light blue background color */
-  }
+  text-align: center;
+  margin-top: 200px; /* Adjust the margin-top to create space below the fixed header */
+  background-color: black; /* Light blue background color */
+}
 
-  
-  .title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
 textarea {
-    width: 90%; /* Set width to 90% of the container */
+  width: 90%; /* Set width to 90% of the container */
   min-height: 300px; /* Set minimum height to 300px */
+  text-align: left;
   margin: 0 auto; /* Center the textarea */
   margin-bottom: 20px; /* Add bottom margin */
   padding: 10px; /* Adjust padding as needed */
@@ -41,27 +38,27 @@ textarea {
   color: white; /* Set text color to white */
   background: transparent; /* Set background to transparent */
 }
-  
+
 .blacklist-textarea {
-  width: 90%; /* Set width to 90% of the container */
+  width: 80%; /* Set width to 90% of the container */
   min-height: 50px; /* Set minimum height to 200px */
   margin: 0 auto; /* Center horizontally */
-  margin-top: 20px; /* Add top margin */
+  margin-top: 50px; /* Add top margin */
 }
-  
 
-
+.blacklist-textarea::placeholder {
+  top: 40%;
+}
 
 textarea::placeholder {
   color: rgb(255, 255, 255); /* Set placeholder color to black */
   position: absolute; /* Position placeholder absolutely */
-  top: 50%; /* Position placeholder in the middle */
+  top: 8%; /* Position placeholder in the middle */
   transform: translateY(-50%); /* Center vertically */
   left: 20px; /* Adjust left position as needed */
   font-size: 16px; /* Adjust font size as needed */
   opacity: 0.5; /* Set initial opacity */
   transition: opacity 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Add transition effect */
-
 }
 
 /* Add animation when input is focused */
@@ -80,7 +77,6 @@ textarea:not(:focus)::placeholder {
   font-size: 16px; /* Restore font size */
 }
 
-
 /* Customize the input container */
 .custom-input {
   width: 90%;
@@ -98,6 +94,7 @@ textarea:not(:focus)::placeholder {
   font-size: 16px;
   transition: border-color 0.3s ease;
   color: whitesmoke; /* Set text color to black */
+  text-align: left;
 }
 
 /* Style the placeholder */
@@ -125,60 +122,122 @@ textarea:not(:focus)::placeholder {
   background-color: #45a049; /* Darker green on hover */
 }
 
-  
-  textarea:focus {
-    border-color: #007bff;
-  }
-  
-  button {
-    background-color: rgba(130, 156, 200, 0.392); /* Light grey button color */
-    color: white;
-    margin: 10 auto;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-  }
-  
-  button:hover {
-    background-color: #00a31e; /* Darker grey on hover */
-  }
-  
+textarea:focus {
+  border-color: #007bff;
+}
 
-  /* Citations */
-  .citations {
-    margin-top: 20px;
-  }
-  
-  .citations h2 {
-    color: white; /* Darken the color of the heading */
-  }
-  
-  .citations ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
-  }
-  
-  .citations li {
-    margin-bottom: 5px; /* Add some space between citations */
-    color: white; /* Set text color to black */
-  }
+button {
+  background-color: rgba(130, 156, 200, 0.392); /* Light grey button color */
+  color: white;
+  margin: 10 auto;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
 
-  .citations ol {
-    padding-left: 0; /* Remove default padding */
-  }
-  
-  .citations ol li {
-    margin-bottom: 5px; /* Add some space between citations */
-    list-style-type: decimal; /* Use decimal numbers for list items */
-  }
-  
-  .citations ol li::before {
-    content: counter(list-item) ". "; /* Add a period after the number */
-    margin-right: 5px; /* Adjust spacing between number and text */
-  }
-  
-  
+button:hover {
+  background-color: #00a31e; /* Darker grey on hover */
+}
+
+/* Citations */
+.citations {
+  margin-top: 20px;
+}
+
+.citations h2 {
+  color: white; /* Darken the color of the heading */
+}
+
+.citations ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+}
+
+.citations li {
+  margin-bottom: 5px; /* Add some space between citations */
+  color: white; /* Set text color to black */
+}
+
+.citations ol {
+  padding-left: 0; /* Remove default padding */
+}
+
+.citations ol li {
+  margin-bottom: 5px; /* Add some space between citations */
+  list-style-type: decimal; /* Use decimal numbers for list items */
+}
+
+.citations ol li::before {
+  content: counter(list-item) ". "; /* Add a period after the number */
+  margin-right: 5px; /* Adjust spacing between number and text */
+}
+
+
+
+/* Selector lIst */
+
+/* homepage.css */
+
+/* Add styles for citation dropdown */
+.select-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.select-container select {
+  width: 25%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: whitesmoke;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+  appearance: none; /* Remove default dropdown arrow */
+}
+
+.select-container select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.select-container select::-ms-expand {
+  display: none; /* Hide arrow in IE */
+}
+
+.select-container::after {
+  content: '\25BC'; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #ccc;
+}
+
+/* Style placeholder for select */
+.select-container::before {
+  content: attr(placeholder);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #ccc;
+}
+
+/* Change color of placeholder when select is focused */
+.select-container select:focus + ::before {
+  color: #007bff;
+}
+
+/* Change color of arrow when select is focused */
+.select-container select:focus + ::after {
+  color: #007bff;
+}
