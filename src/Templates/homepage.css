@@ -195,8 +195,8 @@ button:hover {
   padding: 10px;
   border-radius: 5px;
   font-size: 16px;
-  color: whitesmoke;
-  background-color: transparent;
+  color: white;
+  background-color: black;
   border: 2px solid #ccc;
   transition: border-color 0.3s ease;
   appearance: none; /* Remove default appearance */
@@ -215,7 +215,7 @@ button:hover {
 
 /* Style the dropdown selection highlight */
 .select-container select::-ms-value {
-  background-color: transparent; /* Set the background of the selection highlight to transparent */
+  background-color: black; /* Set the background of the selection highlight to transparent */
 }
 
 /* Style placeholder for select */
@@ -230,7 +230,7 @@ button:hover {
 }
 
 .select-container select:-moz-focusring {
-  color: transparent;
+  color: black;
   text-shadow: 0 0 0 #000;
 }
 
