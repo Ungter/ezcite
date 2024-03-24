@@ -7,9 +7,15 @@ const Homepage = () => {
   const [citations, setCitations] = useState([]);
   const [blacklistedSites, setBlacklistedSites] = useState('');
   const [citationFormat, setCitationFormat] = useState('MLA'); // Default citation format
+  const [errorMessage, setErrorMessage] = useState('');
 
   // Function to handle essay submission
   const handleSubmit = () => {
+    if (!essay.trim()) {
+      setErrorMessage('Please enter your paper in the text field.');
+      return;
+    }
+
     // Here you would implement the logic to process the essay and generate citations
     // Replace the following lines with your actual citation generation logic
   
@@ -35,6 +41,7 @@ const Homepage = () => {
     console.log('BlacklistJSON:', blacklistJsonString);
   
     setCitations(generatedCitations);
+    setErrorMessage(''); // Clear error message if submission is successful
   };
 
   // Function to handle citation format change
@@ -48,6 +55,7 @@ const Homepage = () => {
       <Header /> {/* Include the Header component */}
 
       <div className="content">
+        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>} {/* Display error message if present */}
         <textarea
           value={essay}
           onChange={(e) => setEssay(e.target.value)}
