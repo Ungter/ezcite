@@ -199,27 +199,20 @@ button:hover {
   background-color: transparent;
   border: 2px solid #ccc;
   transition: border-color 0.3s ease;
-  appearance: none; /* Remove default dropdown arrow */
+  appearance: none; /* Remove default appearance */
+  -moz-appearance: none; /* Remove default appearance for Firefox */
+  -webkit-appearance: none; /* Remove default appearance for Webkit */
 }
 
 .select-container select:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #fffa6a;
 }
 
 .select-container select::-ms-expand {
-  display: none; /* Hide arrow in IE */
+  display: none;
 }
 
-.select-container::after {
-  content: '\25BC'; /* Unicode character for down arrow */
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: #ccc;
-}
 
 /* Style placeholder for select */
 .select-container::before {
@@ -230,6 +223,11 @@ button:hover {
   left: 15px;
   transform: translateY(-50%);
   color: #ccc;
+}
+
+.select-container select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
 }
 
 /* Change color of placeholder when select is focused */
