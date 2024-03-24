@@ -222,7 +222,6 @@ button:hover {
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-  color: #ccc;
 }
 
 .select-container select:-moz-focusring {
