@@ -5,7 +5,7 @@ const fs = require('fs')
 
 // --------------- User input varibles ---------------
 
-let inputPrompt = "With the advances in Machine Learning, there is a growing interest in AI-enabled tools for autocompleting source code. GitHub Copilot, also referred to as the AI Pair Programmer, has trained on billions of lines of open source GitHub code, and is one of such tools that has been increasingly used since its launch on June 2021. However, little effort has been devoted to understand the practices and challenges of using Copilot in programming with auto-completed source code. To this end, we conducted an empirical study by collecting and analyzing the data from Stack Overflow (SO) and GitHub Discussions. More specifically, we searched and manually collected 169 SO posts and 655 GitHub discussions related to the usage of Copilot. We identified the programming languages, IDEs, technologies used with Copilot, functions implemented, benefits, limitations, and challenges when using Copilot. The results show that when practitioners use Copilot: (1) The major programming languages used with Copilot are JavaScript and Python, (2) the main IDE used with Copilot is Visual Studio Code, (3) the most common used technology with Copilot is Node.js, (4) the leading function implemented by Copilot is data processing, (5) the significant benefit of using Copilot is useful code generation, and (6) the main limitation encountered by practitioners when using Copilot is difficulty of integration. Our results suggest that using Copilot is like a double-edged sword, which requires developers to carefully consider various aspects when deciding whether or not to use it. Our study provides empirically grounded foundations and basis for future research on the role of Copilot as an AI pair programmer in software development."
+let inputPrompt = "Roe v. Wade, 410 U.S. 113 (1973),[1] was a landmark decision of the U.S. Supreme Court in which the Court ruled that the Constitution of the United States generally protected a right to have an abortion. The decision struck down many abortion laws, and caused an ongoing abortion debate in the United States about whether, or to what extent, abortion should be legal, who should decide the legality of abortion, and what the role of moral and religious views in the political sphere should be.[2][3] The decision also shaped debate concerning which methods the Supreme Court should use in constitutional adjudication."
 let blacklistedWebsites;
 let citeStyle;
 
@@ -101,13 +101,18 @@ async function JSONhelper() {
     try {
         JSON.parse(response);
         return response;
-    } 
-    catch (error) {
+    } catch (error) {
         const systemPrompt = "Convert the input into a valid JSON format. Use JSON output format."
         return await callAI("sonnet", systemPrompt, response)
     }
 }
 
-JSONhelper().then((result) => {
+async function determineSources() {
+    let textToCite = await JSONhelper()
+    const systemPrompt = `Identify possible sources from the text and cite them in MLA format. If not certain, do NOT cite them and output "N/A". Use JSON output format and NOTHING ELSE.`
+    return await callAI("opus", systemPrompt, textToCite)
+}
+
+determineSources().then((result) => {
     console.log(result)
 })
