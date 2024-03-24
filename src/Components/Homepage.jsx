@@ -1,38 +1,51 @@
-// Import React and useState
 import React, { useState } from 'react';
 import Header from './Header'; // Import the Header component
 import '../Templates/homepage.css';
 
-// Create Homepage component
 const Homepage = () => {
-  // State variables
   const [essay, setEssay] = useState('');
   const [citations, setCitations] = useState([]);
   const [blacklistedSites, setBlacklistedSites] = useState('');
   const [citationFormat, setCitationFormat] = useState('MLA'); // Default citation format
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Citation value: below
+  const citationValue = 'MLA';
+
   // Function to handle essay submission
-  const handleSubmit = () => {
-    // Check if essay is empty
-    if (!essay.trim()) {
-      setErrorMessage('Please enter your paper in the text field.');
-      return;
-    }
+  // Function to handle essay submission
+const handleSubmit = () => {
+  if (!essay.trim()) {
+    setErrorMessage('Please enter your paper in the text field.');
+    return;
+  }
 
-    // Split essay into sentences and treat each sentence as a citation
-    const essaySentences = essay.split('.').filter(sentence => sentence.trim() !== '');
-    const generatedCitations = essaySentences.map((sentence, index) => ({
-      id: index + 1,
-      text: sentence.trim() + '.',
-      citationValue: citationFormat, // Set the citationValue to the selected citation format
-    }));
+  // For now, let's just split the essay into sentences and treat each sentence as a citation
+  const essaySentences = essay.split('.').filter(sentence => sentence.trim() !== '');
+  const generatedCitations = essaySentences.map((sentence, index) => ({
+    id: index + 1,
+    text: sentence.trim() + '.',
+    citationValue: citationFormat, // Set the citationValue to the selected citation format
+  }));
 
-    // Update citations state
-    setCitations(generatedCitations);
-    // Clear error message if submission is successful
-    setErrorMessage('');
+  const essayJsonData = {
+    essay,
   };
+  const essayJsonString = JSON.stringify(essayJsonData, null, 2);
+  console.log('PaperJSON:', essayJsonString);
+
+  // Generate JSON string for blacklisted sites
+  const blacklistSitesArray = blacklistedSites.split(',').map(site => site.trim()).filter(site => site !== '');
+  const blacklistJsonData = {
+    blacklistedSites: blacklistSitesArray,
+  };
+  const blacklistJsonString = JSON.stringify(blacklistJsonData, null, 2);
+  console.log('BlacklistJSON:', blacklistJsonString);
+
+  setCitations(generatedCitations);
+  setErrorMessage(''); // Clear error message if submission is successful
+};
+
 
   // Function to handle citation format change
   const handleFormatChange = (event) => {
