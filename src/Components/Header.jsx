@@ -18,12 +18,13 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${isVisible ? 'visible' : 'hidden'}`}>
+  <header className={`header ${isVisible ? 'visible' : 'hidden'}`}>
       <img src={require('../ezcite.png')} alt="Logo" />
       <div className="introduction">
         <h1>Welcome to EzCite!</h1>
         <p>The Best Place to Get Citations for Your Paper.</p>
       </div>
+
     </header>
   );
 };
