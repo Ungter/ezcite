@@ -1,6 +1,6 @@
 # EZCITE - The Best Place to Get Citations for Your Paper
 
-**URL:** [ezcite.study](https://ezcite.study)
+**URL:** [ezcite.study](https://ezcite.study) (only the discord bot works atm because we can't afford a server)
 
 **Authors:** Samarth Jain, Eshan Agarwal, Ted Sha, Sanjay Karunamoorthy
 
